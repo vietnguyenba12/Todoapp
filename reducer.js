@@ -21,6 +21,7 @@ const actions = {
     toggle({ todos }, index) {
         const todo = todos[index];
         todo.completed = !todo.completed;
+        storage.set(todos);
     },
     toggleAll({ todos }, completed) {
         todos.forEach((todo) => (todo.completed = completed));
